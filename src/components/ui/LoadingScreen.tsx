@@ -14,14 +14,14 @@ export function LoadingScreen() {
   const [quoteIndex, setQuoteIndex] = useState(0);
   const [visible, setVisible] = useState(true);
   const setIsLoaded = useStore((s) => s.setIsLoaded);
-  const intervalRef = useRef<ReturnType<typeof setInterval>>();
+  const intervalRef = useRef<any>(null);
 
   useEffect(() => {
     // Simulate loading progress
     intervalRef.current = setInterval(() => {
       setProgress((prev) => {
         if (prev >= 100) {
-          clearInterval(intervalRef.current);
+          if (intervalRef.current) clearInterval(intervalRef.current);
           setTimeout(() => {
             setVisible(false);
             setTimeout(() => setIsLoaded(true), 500);
@@ -38,7 +38,7 @@ export function LoadingScreen() {
     }, 3000);
 
     return () => {
-      clearInterval(intervalRef.current);
+      if (intervalRef.current) clearInterval(intervalRef.current);
       clearInterval(quoteInterval);
     };
   }, [setIsLoaded]);

@@ -33,14 +33,12 @@ export function CosmicBackground() {
         <bufferAttribute
           attach="attributes-position"
           count={2000}
-          array={starPositions.positions}
-          itemSize={3}
+          args={[starPositions.positions, 3]}
         />
         <bufferAttribute
           attach="attributes-size"
           count={2000}
-          array={starPositions.sizes}
-          itemSize={1}
+          args={[starPositions.sizes, 1]}
         />
       </bufferGeometry>
       <pointsMaterial

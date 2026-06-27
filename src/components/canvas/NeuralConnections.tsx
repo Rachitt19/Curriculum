@@ -86,7 +86,9 @@ function NeuralLine({
 
   return (
     <group>
+      {/* @ts-ignore */}
       <line ref={lineRef} geometry={lineGeometry}>
+        {/* @ts-ignore */}
         <lineBasicMaterial
           color={threeColor}
           transparent

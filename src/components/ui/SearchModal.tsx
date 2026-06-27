@@ -120,7 +120,7 @@ export function SearchModal() {
             initial={{ opacity: 0, y: -20, scale: 0.95 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: -20, scale: 0.95 }}
-            transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
+            transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] as const }}
           >
             <div className="search-input-wrapper">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="rgba(240,240,255,0.4)" strokeWidth="2">

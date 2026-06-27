@@ -296,7 +296,9 @@ function GraphEdge({ from, to, thin }: { from: GraphNode; to: GraphNode; thin?: 
   const geometry = useMemo(() => new THREE.BufferGeometry().setFromPoints(points), [points]);
 
   return (
+    /* @ts-ignore */
     <line geometry={geometry}>
+      {/* @ts-ignore */}
       <lineBasicMaterial
         color={from.color}
         transparent
